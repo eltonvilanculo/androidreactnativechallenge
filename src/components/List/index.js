@@ -1,6 +1,7 @@
 import React from "react";
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import styles from "./styles";
+import hdate from 'human-date';
 
 export default function List({item,onPress}) {
   return (
@@ -19,7 +20,7 @@ export default function List({item,onPress}) {
 
         <Text style={styles.subtitle}>{item.subtitle}</Text>
 
-        <Text style={styles.date}>{item.date}</Text>
+        <Text style={styles.date}>{hdate.relativeTime (item.date)}</Text>
       </View>
     </TouchableOpacity>
   );
